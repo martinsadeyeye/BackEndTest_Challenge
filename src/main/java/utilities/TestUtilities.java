@@ -2,6 +2,7 @@ package utilities;
 
 
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 import java.util.Base64;
@@ -55,6 +56,30 @@ public class TestUtilities {
         return response;
 
     }
+
+
+    /**
+     * This method creates a valid HTTP GET request to User with ID.
+     * It also logs all request details.
+     *
+     * @return response
+     */
+
+    public static Response userWithID() {
+
+        Response response =
+                given().
+                        contentType(ContentType.JSON).
+                        when().
+                        get(Endpoints.GET_SEARCHUSERS).
+                        then().contentType(ContentType.JSON).
+                        extract().
+                        response();
+
+        return response;
+
+    }
+
 
     /**
      * This method creates a valid HTTP GET request to Posts.
