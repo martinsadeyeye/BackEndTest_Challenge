@@ -1,6 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="UserBlog Test Suite">
-
+    <listeners>
+        <listener class-name="utilities.ExtentReporterNG" />
+    </listeners>
     <test name="UserBlogTesting Tests">
         <classes>
             <class name="requests.SearchUserTest"/>

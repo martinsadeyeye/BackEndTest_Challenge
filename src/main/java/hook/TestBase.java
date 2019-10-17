@@ -24,11 +24,8 @@ public class TestBase {
         //Set base URI
         RestAssured.baseURI = environment.getProperty("HOST");
 
-        /*RestAssured.baseURI = System.getProperty("server.host");
-        String port = System.getProperty("server.port");
-        RestAssured.port = Integer.valueOf(port);*/
-
-
     }
+
+
 
 }
