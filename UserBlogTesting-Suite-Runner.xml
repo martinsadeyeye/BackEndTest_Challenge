@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="UserBlog Test Suite">
+
+    <test name="UserBlogTesting Tests">
+        <classes>
+            <class name="requests.SearchUserTest"/>
+            <class name="requests.FetchUserPostsTest" />
+            <class name="requests.FetchUserPostCommentsTest" />
+        </classes>
+    </test>
+</suite>
