@@ -69,9 +69,9 @@ public class TestUtilities {
 
         Response response =
                 given().
-                        contentType(ContentType.JSON).
+                        accept(ContentType.JSON).
                         when().
-                        get(Endpoints.GET_SEARCHUSERS).
+                        get(Endpoints.GET_SEARCHUSERS_WITHID).
                         then().contentType(ContentType.JSON).
                         extract().
                         response();
