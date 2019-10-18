@@ -16,8 +16,50 @@ public class FetchUserPostCommentsTest extends TestBase {
         initializeBaseURI();
     }
 
+
     @Test
-    public void when_getUserIsCalled_expect_OneRecordPerUser() {
-        given().get(Endpoints.GET_SEARCHUSERS).then().statusCode(200).log().all();
+    public void when_getCommentIsCalled_expect_HTTPStatusCode200() {
+
     }
+
+    @Test
+    public void when_getCommentIsCalled_expect_HeaderContentType_ApplicationJson() {
+
+    }
+
+    @Test
+    public void when_getCommentIsCalled_expect_ArrayIsNotEmpty() {
+
+    }
+
+    @Test
+    public void when_getCommentIsCalled_expect_ListOfComments() {
+
+    }
+
+    @Test
+    public void when_getCommentIsCalled_expect_ListOfPostId() {
+
+    }
+
+    @Test
+    public void when_getCommentIsCalled_expect_ListOfEmail() {
+
+    }
+
+    @Test
+    public void when_getCommentWithUniquePostIdIsCalled_expect_ListofCommentwithSamePostId() {
+
+    }
+
+    @Test
+    public void when_getCommentWithUniqueIdIsCalled_expect_SingleData() {
+
+    }
+
+    public void when_getCommentIsCalled_expect_validEmailFormat() {
+
+    }
+
+
 }
