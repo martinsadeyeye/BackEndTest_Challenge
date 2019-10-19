@@ -9,6 +9,7 @@ import utilities.Endpoints;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -32,11 +33,12 @@ public class SearchUserTest extends TestBase {
                 extract().
                 response();
 
+        Assert.assertEquals(200, response.statusCode()); //Validate HTTP Status Code from response
     }
 
     @Test
     public void when_getUserIsCalled_expect_ArrayIsNotEmpty() {
-        given().get(Endpoints.GET_SEARCHUSERS).then().statusCode(200).log().all();
+
     }
 
     @Test
@@ -65,7 +67,7 @@ public class SearchUserTest extends TestBase {
     }
 
     @Test
-    public void when_getUserIsCalled_expect_HeaderContentType_ApplicationJson() {
+    public void when_getUserIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
         Response response = arrayListofUsers();
 
         response.
@@ -96,7 +98,7 @@ public class SearchUserTest extends TestBase {
     @Test
     public void when_getUserWithUniqueIdIsCalled_expect_UsernameSamantha() {
 
-        Response response = userWithID();
+        Response response = userWithID(3);
         String username = response.jsonPath().getString("username");
         System.out.println(username);
 
