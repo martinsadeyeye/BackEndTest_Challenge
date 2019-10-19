@@ -5,7 +5,10 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import java.io.IOException;
+import java.util.List;
+
 import static org.hamcrest.Matchers.equalTo;
 import static utilities.TestUtilities.*;
 
@@ -71,6 +74,11 @@ public class FetchUserPostCommentsTest extends TestBase {
         String Emails = response.jsonPath().getString("email");
         System.out.println(Emails);
 
+        List<String> jsonResponse = response.jsonPath().getList("email");
+        System.out.println(jsonResponse.get(2));
+
+        Assert.assertEquals("Nikita@garfield.biz",jsonResponse.get(2));
+
     }
 
     @Test
@@ -93,7 +101,7 @@ public class FetchUserPostCommentsTest extends TestBase {
                 assertThat().body("id", equalTo(3)).
                 extract().
                 response();
-       // Assert.assertEquals("Nikita@garfield.biz",);
+        // Assert.assertEquals("Nikita@garfield.biz",);
     }
 
     @Test

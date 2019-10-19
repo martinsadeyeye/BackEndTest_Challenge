@@ -58,7 +58,6 @@ public class TestUtilities {
                         when().
                         get(Endpoints.GET_SEARCHUSERS).
                         then().
-                        log().all().
                         extract().
                         response();
 
@@ -68,7 +67,7 @@ public class TestUtilities {
 
 
     /**
-     * This method creates a valid HTTP GET request to User with ID.
+     * This method creates a valid HTTP GET request to Retrieve the details for User with the Id.
      * It also logs all request details.
      *
      * @return response
@@ -105,7 +104,6 @@ public class TestUtilities {
                         when().
                         get(Endpoints.GET_FETCHPOSTS).
                         then().
-                        log().all().
                         extract().
                         response();
 
@@ -129,7 +127,6 @@ public class TestUtilities {
                         when().
                         get(Endpoints.GET_FETCHCOMMENTS).
                         then().
-                        log().all().
                         extract().
                         response();
 
@@ -139,7 +136,7 @@ public class TestUtilities {
 
 
     /**
-     * This method creates a valid HTTP GET request to Post of Specific id.
+     * This method creates a valid HTTP GET request to Retrieve the details for Post with the Id.
      * It also logs all request details.
      *
      * @return response
@@ -154,7 +151,6 @@ public class TestUtilities {
                         when().
                         get(Endpoints.GET_FETCHPOST_WITHID).
                         then().
-                        log().all().
                         extract().
                         response();
 
@@ -178,7 +174,6 @@ public class TestUtilities {
                         when().
                         get(Endpoints.GET_FETCHPOST_WITHUSERID).
                         then().
-                        log().all().
                         extract().
                         response();
 
@@ -202,7 +197,6 @@ public class TestUtilities {
                         when().
                         get(Endpoints.GET_FETCHCOMMENT_WITHPOSTID).
                         then().
-                        log().all().
                         extract().
                         response();
 
@@ -212,7 +206,7 @@ public class TestUtilities {
 
 
     /**
-     * This method creates a valid HTTP GET request to comments using a specific PostID but  returns All Comments for all the POSts and user.
+     * This method creates a valid HTTP GET request to Retrieve all comment for PostId but  returns All Comments for all the POSts and user.
      * It also logs all request details.
      *
      * @return response
@@ -226,7 +220,6 @@ public class TestUtilities {
                         when().
                         get(Endpoints.GET_FETCHCOMMENT_WITHPID).
                         then().
-                        log().all().
                         extract().
                         response();
 
@@ -236,7 +229,7 @@ public class TestUtilities {
 
 
     /**
-     * This method creates a valid HTTP GET request to comments using a specific PostID but returns all Comments for the user specified
+     * This method creates a valid HTTP GET request to Retrieve the details for the comment using the Id
      * It also logs all request details.
      *
      * @return response
@@ -251,7 +244,6 @@ public class TestUtilities {
                         when().
                         get(Endpoints.GET_FETCHCOMMENTS_WITHID).
                         then().
-                        log().all().
                         extract().
                         response();
 

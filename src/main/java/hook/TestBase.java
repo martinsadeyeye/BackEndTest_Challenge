@@ -1,7 +1,6 @@
 package hook;
 
 import io.restassured.RestAssured;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -25,7 +24,6 @@ public class TestBase {
         RestAssured.baseURI = environment.getProperty("HOST");
 
     }
-
 
 
 }
