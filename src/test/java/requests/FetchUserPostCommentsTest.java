@@ -94,8 +94,8 @@ public class FetchUserPostCommentsTest extends TestBase {
 
         Response response = commentsForSpecificPostId();
 
-        List<String> jsonResponse = response.jsonPath().getList("postId");
-        for (String em : jsonResponse) {
+        List<Integer> jsonResponse = response.jsonPath().getList("postId");
+        for (Integer em : jsonResponse) {
 
         }
         Assert.assertEquals("Nikita@garfield.biz", jsonResponse.get(2));
@@ -114,7 +114,7 @@ public class FetchUserPostCommentsTest extends TestBase {
         name = listofallcomment.getName();
 
         //Verify that the name is Samantha
-        Assert.assertEquals(name, "");
+        Assert.assertEquals(name, "odio adipisci rerum aut animi");
 
         response.prettyPrint();
     }

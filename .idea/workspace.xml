@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1faecb6b-9e4c-46cb-a7b7-5aa709293167" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/MARTINS.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/MARTINS.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hook/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hook/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/TestUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/TestUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/requests/FetchUserPostCommentsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/requests/FetchUserPostCommentsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/requests/FetchUserPostsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/requests/FetchUserPostsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/requests/SearchUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/requests/SearchUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hook/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hook/TestBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utilities/TestUtilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utilities/TestUtilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/requests/FetchUserPostCommentsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/requests/FetchUserPostCommentsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/requests/FetchUserPostsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/requests/FetchUserPostsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/requests/SearchUserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/requests/SearchUserTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/ExtentReportsTestNG.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/ExtentReportsTestNG.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,10 +20,22 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/requests/FetchUserPostCommentsTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/requests/FetchUserPostsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+            <state relative-caret-position="189">
+              <caret line="99" column="19" lean-forward="true" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utilities/TestUtilities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,9 +87,9 @@
         <option value="$PROJECT_DIR$/src/main/java/responseModels/ListOfAllPostsSuccessResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/responseModels/ListOfAllUsersSuccessResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilities/TestUtilities.java" />
+        <option value="$PROJECT_DIR$/src/test/java/requests/FetchUserPostCommentsTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/requests/SearchUserTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/requests/FetchUserPostsTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/requests/FetchUserPostCommentsTest.java" />
       </list>
     </option>
   </component>
@@ -109,7 +111,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="width" value="978" />
     <option name="height" value="1039" />
@@ -146,14 +148,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UserBlogTesting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UserBlogTesting" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utilities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="UserBlogTesting" type="b2602c69:ProjectViewProjectNode" />
@@ -211,18 +205,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.SearchUserTest.when_getUserIsCalled_expect_ArrayIsNotEmpty (1)">
-    <configuration name="C:/Users/MARTINS/Desktop/UserBlogTesting/UserBlogTesting-Suite-Runner.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UserBlogTesting" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/UserBlogTesting-Suite-Runner.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SearchUserTest.when_getUserIsCalled_expect_ArrayIsNotEmpty (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.FetchUserPostCommentsTest.when_getCommentWithUniquePostIdIsCalled_expect_ListofCommentswithSamePostId">
+    <configuration name="FetchUserPostCommentsTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UserBlogTesting" />
       <extension name="coverage">
         <pattern>
@@ -231,8 +215,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="requests" />
-      <option name="MAIN_CLASS_NAME" value="requests.SearchUserTest" />
-      <option name="METHOD_NAME" value="when_getUserIsCalled_expect_ArrayIsNotEmpty" />
+      <option name="MAIN_CLASS_NAME" value="requests.FetchUserPostCommentsTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FetchUserPostCommentsTest.when_getCommentWithUniquePostIdIsCalled_expect_ListofCommentswithSamePostId" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UserBlogTesting" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="requests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="requests" />
+      <option name="MAIN_CLASS_NAME" value="requests.FetchUserPostCommentsTest" />
+      <option name="METHOD_NAME" value="when_getCommentWithUniquePostIdIsCalled_expect_ListofCommentswithSamePostId" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -240,7 +241,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchUserTest.when_getUserIsCalled_expect_ArrayIsNotEmpty" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FetchUserPostsTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UserBlogTesting" />
       <extension name="coverage">
         <pattern>
@@ -249,16 +250,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="requests" />
-      <option name="MAIN_CLASS_NAME" value="requests.SearchUserTest" />
-      <option name="METHOD_NAME" value="when_getUserIsCalled_expect_ArrayIsNotEmpty" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="requests.FetchUserPostsTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchUserTest.when_getUserIsCalled_expect_ArrayListOfUsers" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UserBlogTesting" />
       <extension name="coverage">
         <pattern>
@@ -268,15 +268,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="requests" />
       <option name="MAIN_CLASS_NAME" value="requests.SearchUserTest" />
-      <option name="METHOD_NAME" value="when_getUserIsCalled_expect_ArrayListOfUsers" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchUserTest.when_getUserIsCalled_expect_UsernameSamantha" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchUserTest.when_getUserWithUniqueIdIsCalled_expect_UsernameSamantha" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UserBlogTesting" />
       <extension name="coverage">
         <pattern>
@@ -286,7 +285,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="requests" />
       <option name="MAIN_CLASS_NAME" value="requests.SearchUserTest" />
-      <option name="METHOD_NAME" value="when_getUserIsCalled_expect_UsernameSamantha" />
+      <option name="METHOD_NAME" value="when_getUserWithUniqueIdIsCalled_expect_UsernameSamantha" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -296,11 +295,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.SearchUserTest.when_getUserIsCalled_expect_ArrayIsNotEmpty (1)" />
-        <item itemvalue="TestNG.SearchUserTest.when_getUserIsCalled_expect_ArrayListOfUsers" />
-        <item itemvalue="TestNG.SearchUserTest.when_getUserIsCalled_expect_ArrayIsNotEmpty" />
-        <item itemvalue="TestNG.C:/Users/MARTINS/Desktop/UserBlogTesting/UserBlogTesting-Suite-Runner.xml" />
-        <item itemvalue="TestNG.SearchUserTest.when_getUserIsCalled_expect_UsernameSamantha" />
+        <item itemvalue="TestNG.FetchUserPostCommentsTest.when_getCommentWithUniquePostIdIsCalled_expect_ListofCommentswithSamePostId" />
+        <item itemvalue="TestNG.FetchUserPostCommentsTest" />
+        <item itemvalue="TestNG.FetchUserPostsTest" />
+        <item itemvalue="TestNG.SearchUserTest" />
+        <item itemvalue="TestNG.SearchUserTest.when_getUserWithUniqueIdIsCalled_expect_UsernameSamantha" />
       </list>
     </recent_temporary>
   </component>
@@ -318,27 +317,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FetchUserPostCommentsTest_when_getCommentIsCalled_expect_ListOfnamesInComments - 2019.10.20 at 13h 18m 55s.xml">
-      <configuration name="FetchUserPostCommentsTest.when_getCommentIsCalled_expect_ListOfnamesInComments" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FetchUserPostCommentsTest_when_getCommentIsCalled_expect_ListOfPostId - 2019.10.20 at 13h 21m 26s.xml">
-      <configuration name="FetchUserPostCommentsTest.when_getCommentIsCalled_expect_ListOfPostId" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FetchUserPostCommentsTest_when_getCommentIsCalled_expect_ListOfPostId - 2019.10.20 at 13h 22m 01s.xml">
-      <configuration name="FetchUserPostCommentsTest.when_getCommentIsCalled_expect_ListOfPostId" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FetchUserPostCommentsTest_when_getCommentIsCalled_expect_ListOfEmail - 2019.10.20 at 13h 25m 32s.xml">
-      <configuration name="FetchUserPostCommentsTest.when_getCommentIsCalled_expect_ListOfEmail" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SearchUserTest_when_getUserIsCalled_expect_UsernameSamantha - 2019.10.20 at 16h 22m 47s.xml">
-      <configuration name="SearchUserTest.when_getUserIsCalled_expect_UsernameSamantha" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="C__Users_MARTINS_Desktop_UserBlogTesting_UserBlogTesting-Suite-Runner_xml - 2019.10.20 at 18h 19m 59s.xml">
-      <configuration name="C:/Users/MARTINS/Desktop/UserBlogTesting/UserBlogTesting-Suite-Runner.xml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SearchUserTest_when_getUserIsCalled_expect_ArrayIsNotEmpty - 2019.10.20 at 18h 26m 18s.xml">
-      <configuration name="SearchUserTest.when_getUserIsCalled_expect_ArrayIsNotEmpty" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="SearchUserTest_when_getUserIsCalled_expect_ArrayListOfUsers - 2019.10.20 at 18h 26m 56s.xml">
       <configuration name="SearchUserTest.when_getUserIsCalled_expect_ArrayListOfUsers" configurationId="TestNG" />
     </history-entry>
@@ -348,12 +326,33 @@
     <history-entry file="SearchUserTest_when_getUserIsCalled_expect_ArrayIsNotEmpty_(1) - 2019.10.20 at 18h 27m 56s.xml">
       <configuration name="SearchUserTest.when_getUserIsCalled_expect_ArrayIsNotEmpty (1)" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="C__Users_MARTINS_Desktop_UserBlogTesting_UserBlogTesting-Suite-Runner_xml - 2019.10.20 at 18h 36m 07s.xml">
+      <configuration name="C:/Users/MARTINS/Desktop/UserBlogTesting/UserBlogTesting-Suite-Runner.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchUserTest_when_getUserIsCalled_expect_ArrayListOfUserId - 2019.10.20 at 18h 42m 38s.xml">
+      <configuration name="SearchUserTest.when_getUserIsCalled_expect_ArrayListOfUserId" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchUserTest_when_getUserIsCalled_expect_HeaderContentTypeToBeApplicationJson - 2019.10.20 at 18h 42m 54s.xml">
+      <configuration name="SearchUserTest.when_getUserIsCalled_expect_HeaderContentTypeToBeApplicationJson" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchUserTest_when_getUserIsCalled_expect_UsernameSamantha - 2019.10.20 at 18h 43m 07s.xml">
+      <configuration name="SearchUserTest.when_getUserIsCalled_expect_UsernameSamantha" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchUserTest_when_getUserWithUniqueIdIsCalled_expect_UsernameSamantha - 2019.10.20 at 18h 44m 00s.xml">
+      <configuration name="SearchUserTest.when_getUserWithUniqueIdIsCalled_expect_UsernameSamantha" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchUserTest - 2019.10.20 at 18h 46m 15s.xml">
+      <configuration name="SearchUserTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FetchUserPostsTest - 2019.10.20 at 18h 47m 05s.xml">
+      <configuration name="FetchUserPostsTest" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21409395" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21409395" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -362,7 +361,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295129" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23087819" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27053824" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -678,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilities/Endpoints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/responseModels/ListOfAllCommentsSuccessResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -720,16 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilities/TestUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="243" column="53" lean-forward="true" selection-start-line="243" selection-start-column="53" selection-end-line="243" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/responseModels/ErrorResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -737,10 +719,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/requests/FetchUserPostCommentsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/requests/SearchUserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-709">
-          <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+        <state relative-caret-position="11">
+          <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utilities/Endpoints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utilities/TestUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -749,18 +758,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/requests/FetchUserPostsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-284">
-          <caret line="86" column="12" lean-forward="true" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/requests/FetchUserPostCommentsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="189">
+          <caret line="99" column="19" lean-forward="true" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

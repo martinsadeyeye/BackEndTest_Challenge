@@ -62,7 +62,7 @@ public class FetchUserPostsTest extends TestBase {
         Response response = arrayListOfposts();
 
         List<String> jsonResponse = response.jsonPath().getList("$");
-        Assert.assertEquals(10, jsonResponse.size());
+        Assert.assertEquals(100, jsonResponse.size());
     }
 
     @Test
@@ -82,11 +82,10 @@ public class FetchUserPostsTest extends TestBase {
 
         Response response = arrayListOfposts();
 
-        List<String> jsonResponse = response.jsonPath().getList("id");
-        for (String id : jsonResponse) {
+        List<Integer> jsonResponse = response.jsonPath().getList("id");
+        for (Integer id : jsonResponse) {
 
         }
-        Assert.assertEquals(3, jsonResponse.get(2));
 
     }
 

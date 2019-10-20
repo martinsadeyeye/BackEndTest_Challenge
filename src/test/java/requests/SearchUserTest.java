@@ -87,11 +87,11 @@ public class SearchUserTest extends TestBase {
     public void when_getUserIsCalled_expect_ArrayListOfUserId() {
         Response response = arrayListofUsers();
 
-        List<String> jsonResponse = response.jsonPath().getList("id");
-        for (String em : jsonResponse) {
+        List<String> jsonResponse = response.jsonPath().getList("email");
+        for (String email : jsonResponse) {
 
         }
-        Assert.assertEquals(3, jsonResponse.get(2));
+        Assert.assertEquals("Nathan@yesenia.net",jsonResponse.get(2));
     }
 
     @Test
@@ -105,22 +105,6 @@ public class SearchUserTest extends TestBase {
                 response();
     }
 
-    @Test
-    public void when_getUserIsCalled_expect_UsernameSamantha() {
-
-        Response response = arrayListofUsers();
-
-        //Deserialize to a "Type-Detail Response" Object
-        ListOfAllUsersSuccessResponse listofalluser = response.as(ListOfAllUsersSuccessResponse.class);
-
-        //Get Username from response
-        int id;
-        id = listofalluser.getId();
-
-        //Verify that the username is Samantha
-        Assert.assertEquals(id, 3);
-
-    }
 
     @Test
     public void when_getUserWithUniqueIdIsCalled_expect_UsernameSamantha() {
