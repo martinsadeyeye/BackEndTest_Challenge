@@ -5,11 +5,12 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import responseModels.ListOfAllCommentsSuccessResponse;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.Matchers.equalTo;
 import static utilities.TestUtilities.*;
 
 public class FetchUserPostCommentsTest extends TestBase {
@@ -47,14 +48,22 @@ public class FetchUserPostCommentsTest extends TestBase {
     @Test
     public void when_getCommentIsCalled_expect_ArrayIsNotEmpty() {
 
+        Response response = arrayListOfComments();
+
+        List<Object> jsonResponse = response.jsonPath().getList("$");
+        Assert.assertTrue(!jsonResponse.isEmpty());
     }
 
     @Test
     public void when_getCommentIsCalled_expect_ListOfnamesInComments() {
         Response response = arrayListOfComments();
 
-        String Names = response.jsonPath().getString("name");
-        System.out.println(Names);
+        ArrayList<String> names = response.then().extract().path("name");
+        for (String m : names) {
+            System.out.println(m);
+        }
+        Assert.assertEquals("odio adipisci rerum aut animi", names.get(2));
+
     }
 
     @Test
@@ -62,8 +71,11 @@ public class FetchUserPostCommentsTest extends TestBase {
 
         Response response = arrayListOfComments();
 
-        String PostIds = response.jsonPath().getString("postId");
-        System.out.println(PostIds);
+        ArrayList<Integer> postid = response.then().extract().path("postId");
+        for (Integer pid : postid) {
+            System.out.println(pid);
+        }
+
     }
 
     @Test
@@ -71,37 +83,40 @@ public class FetchUserPostCommentsTest extends TestBase {
 
         Response response = arrayListOfComments();
 
-        String Emails = response.jsonPath().getString("email");
-        System.out.println(Emails);
-
         List<String> jsonResponse = response.jsonPath().getList("email");
-        System.out.println(jsonResponse.get(2));
-
-        Assert.assertEquals("Nikita@garfield.biz",jsonResponse.get(2));
-
+        for (String eMail : jsonResponse) {
+        }
+        Assert.assertEquals("Nikita@garfield.biz", jsonResponse.get(2));
     }
 
     @Test
     public void when_getCommentWithUniquePostIdIsCalled_expect_ListofCommentswithSamePostId() {
 
         Response response = commentsForSpecificPostId();
-        String PostIds = response.jsonPath().getString("postId");
-        System.out.println(PostIds);
+
+        List<String> jsonResponse = response.jsonPath().getList("postId");
+        for (String em : jsonResponse) {
+
+        }
+        Assert.assertEquals("Nikita@garfield.biz", jsonResponse.get(2));
+
     }
 
     @Test
     public void when_getCommentWithUniqueIdIsCalled_expect_SingledatawithSpecifiedIdComments() {
         Response response = commentsForAsingleUser(3);
 
-        String Id = response.jsonPath().getString("id");
-        System.out.println(Id);
+        //Deserialize to a "Type-Detail Response" Object
+        ListOfAllCommentsSuccessResponse listofallcomment = response.as(ListOfAllCommentsSuccessResponse.class);
 
-        response.
-                then().
-                assertThat().body("id", equalTo(3)).
-                extract().
-                response();
-        // Assert.assertEquals("Nikita@garfield.biz",);
+        //Get Username from response
+        String name;
+        name = listofallcomment.getName();
+
+        //Verify that the name is Samantha
+        Assert.assertEquals(name, "");
+
+        response.prettyPrint();
     }
 
     @Test

@@ -36,7 +36,6 @@ public class TestUtilities {
         return base64DataString;
     }
 
-
     ResponseSpecification checkStatusCodeAndContentType =
             new ResponseSpecBuilder().
                     expectStatusCode(200).
@@ -251,11 +250,6 @@ public class TestUtilities {
 
     }
 
-
-    /**
-     * This method generates random long values that are used as unique side IDs.
-     * It ensures that the generated values are positive.
-     */
     public static void generateID() {
         Random randomID = new Random();
         id = (int) (randomID.nextLong() & Long.MAX_VALUE); //Positive random IDs

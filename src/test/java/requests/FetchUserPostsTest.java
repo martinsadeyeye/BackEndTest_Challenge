@@ -5,13 +5,14 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import utilities.Endpoints;
+import responseModels.ListOfAllPostsSuccessResponse;
+import responseModels.SpecificPostWithUserIdSuccessResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.hamcrest.Matchers.equalTo;
-import static utilities.TestUtilities.arrayListOfposts;
-import static utilities.TestUtilities.postForSpecificId;
+import static utilities.TestUtilities.*;
 
 public class FetchUserPostsTest extends TestBase {
 
@@ -48,46 +49,75 @@ public class FetchUserPostsTest extends TestBase {
 
     @Test
     public void when_getPostIsCalled_expect_ArrayIsNotEmpty() {
+        Response response = arrayListOfposts();
+
+        List<String> jsonResponse = response.jsonPath().getList("$");
+        Assert.assertTrue(!jsonResponse.isEmpty());
 
     }
 
     @Test
-    public void when_getPostIsCalled_expect_ListOfPosts() {
+    public void when_getPostIsCalled_expect_ListOfPostsSizeToBe10() {
 
+        Response response = arrayListOfposts();
+
+        List<String> jsonResponse = response.jsonPath().getList("$");
+        Assert.assertEquals(10, jsonResponse.size());
     }
 
     @Test
     public void when_getPostIsCalled_expect_ListOfTitle() {
+        Response response = arrayListOfposts();
 
+        List<String> jsonResponse = response.jsonPath().getList("title");
+
+        for (String post : jsonResponse) {
+        }
+
+        Assert.assertEquals("ea molestias quasi exercitationem repellat qui ipsa sit aut", jsonResponse.get(2));
     }
 
     @Test
-    public void when_getPostIsCalled_expect_ListOfUserId() {
+    public void when_getPostIsCalled_expect_SamanthasIdshouldbeOntheList() {
 
-    }
+        Response response = arrayListOfposts();
 
-    @Test
-    public void when_getPostIsCalled_expect_SamanthasId() {
+        List<String> jsonResponse = response.jsonPath().getList("id");
+        for (String id : jsonResponse) {
+
+        }
+        Assert.assertEquals(3, jsonResponse.get(2));
 
     }
 
     @Test
     public void when_getPostWithUniqueUserIdIsCalled_expect_ListofPostwithSameUserId() {
 
+        Response response = postForSpecificUserId();
+
+        SpecificPostWithUserIdSuccessResponse specificpostwithUserId = response.as(SpecificPostWithUserIdSuccessResponse.class);
+
+        //Get id from response
+        int userId;
+        userId = specificpostwithUserId.getUserId();
+
+        //Verify that the username is Samantha
+        Assert.assertEquals(userId, 1);
     }
 
     @Test
     public void when_getPostWithUniqueIdIsCalled_expect_SingleData() {
 
         Response response = postForSpecificId(3);
-        String Id = response.jsonPath().getString("id");
-        System.out.println(Id);
 
-        response.
-                then().
-                assertThat().body("title", equalTo("ea molestias quasi exercitationem repellat qui ipsa sit aut")).
-                extract().
-                response();
+        ListOfAllPostsSuccessResponse listofAllPost = response.as(ListOfAllPostsSuccessResponse.class);
+
+        //Get title from response
+        String title;
+        title = listofAllPost.getTitle();
+
+        //Verify that the username is Samantha
+        Assert.assertEquals(title, "ea molestias quasi exercitationem repellat qui ipsa sit aut");
     }
 
 

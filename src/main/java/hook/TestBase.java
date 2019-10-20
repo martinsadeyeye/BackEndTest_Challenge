@@ -1,10 +1,18 @@
 package hook;
 
 import io.restassured.RestAssured;
+import org.testng.annotations.Listeners;
+import utilities.ExtentReporterNG;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+@Listeners(ExtentReporterNG.class)
+
+/**
+ * @author Martins Adeyeye
+ */
 public class TestBase {
     /**
      * This is assuming that this project might not be run on the same machine as the application under test.

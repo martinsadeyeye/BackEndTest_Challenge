@@ -3,23 +3,38 @@ package requests;
 import hook.TestBase;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import utilities.Endpoints;
+import responseModels.ListOfAllUsersSuccessResponse;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 import static utilities.TestUtilities.*;
 
+/**
+ * This class contains all tests for the User
+ *
+ * @author Martins Adeyeye
+ */
 public class SearchUserTest extends TestBase {
+
+    /**
+     * Before the tests, it initializes the base URI
+     * which will be used by each test method.
+     *
+     * @throws IOException
+     */
 
     @BeforeTest
     public void setBaseURI() throws IOException {
         initializeBaseURI();
+    }
+
+    @BeforeMethod
+    public void uniqueIDForEachMethod() {
+        generateID();
     }
 
     @Test
@@ -39,31 +54,44 @@ public class SearchUserTest extends TestBase {
     @Test
     public void when_getUserIsCalled_expect_ArrayIsNotEmpty() {
 
+        Response response = arrayListofUsers();
+
+        List<String> jsonResponse = response.jsonPath().getList("$");
+        Assert.assertTrue(!jsonResponse.isEmpty());
     }
 
     @Test
     public void when_getUserIsCalled_expect_ArrayListOfUsers() {
         Response response = arrayListofUsers();
 
-        List<String> jsonResponse = response.jsonPath().getList("$");
-        System.out.println(jsonResponse.size());
+        List<String> jsonResponse = response.jsonPath().getList("username");
         Assert.assertEquals(10, jsonResponse.size());
+
+        String Username = response.then().extract().path("[2].username");
+        Assert.assertEquals(Username, "Samantha");
     }
 
     @Test
     public void when_getUserIsCalled_expect_ArrayListOfUsername() {
         Response response = arrayListofUsers();
 
-        String userNames = response.jsonPath().getString("username");
-        System.out.println(userNames);
+        List<String> jsonResponse = response.jsonPath().getList("username");
+        for (String em : jsonResponse) {
+
+        }
+
+        Assert.assertEquals("Samantha", jsonResponse.get(2));
     }
 
     @Test
     public void when_getUserIsCalled_expect_ArrayListOfUserId() {
         Response response = arrayListofUsers();
 
-        String id = response.jsonPath().getString("id");
-        System.out.println(id);
+        List<String> jsonResponse = response.jsonPath().getList("id");
+        for (String em : jsonResponse) {
+
+        }
+        Assert.assertEquals(3, jsonResponse.get(2));
     }
 
     @Test
@@ -81,17 +109,16 @@ public class SearchUserTest extends TestBase {
     public void when_getUserIsCalled_expect_UsernameSamantha() {
 
         Response response = arrayListofUsers();
-        String username = response.jsonPath().getString("username[2]");
-        System.out.println(username);
 
-        List<String> jsonResponse = response.jsonPath().getList("username");
-        System.out.println(jsonResponse.get(2));
+        //Deserialize to a "Type-Detail Response" Object
+        ListOfAllUsersSuccessResponse listofalluser = response.as(ListOfAllUsersSuccessResponse.class);
 
-        response.
-                then().
-                assertThat().body("[2].username", equalTo("Samantha")).
-                extract().
-                response();
+        //Get Username from response
+        int id;
+        id = listofalluser.getId();
+
+        //Verify that the username is Samantha
+        Assert.assertEquals(id, 3);
 
     }
 
@@ -99,15 +126,18 @@ public class SearchUserTest extends TestBase {
     public void when_getUserWithUniqueIdIsCalled_expect_UsernameSamantha() {
 
         Response response = userWithID(3);
-        String username = response.jsonPath().getString("username");
-        System.out.println(username);
 
-        response.
-                then().
-                assertThat().body("username", equalTo("Samantha")).
-                extract().
-                response();
+        //Deserialize to a "Type-Detail Response" Object
+        ListOfAllUsersSuccessResponse listofalluser = response.as(ListOfAllUsersSuccessResponse.class);
 
+        //Get Username from response
+        String username;
+        username = listofalluser.getUsername();
+
+        //Verify that the username is Samantha
+        Assert.assertEquals(username, "Samantha");
+
+        response.prettyPrint();
     }
 
 }
