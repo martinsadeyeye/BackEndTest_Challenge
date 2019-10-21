@@ -6,9 +6,11 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import responseModels.ListOfAllPostsSuccessResponse;
+import responseModels.ListOfAllUsersSuccessResponse;
 import responseModels.SpecificPostWithUserIdSuccessResponse;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -16,7 +18,7 @@ import static utilities.TestUtilities.*;
 
 public class FetchUserPostsTest extends TestBase {
 
-
+    List<ListOfAllPostsSuccessResponse> Postlist;
     @BeforeTest
     public void setBaseURI() throws IOException {
         initializeBaseURI();
@@ -82,26 +84,29 @@ public class FetchUserPostsTest extends TestBase {
 
         Response response = arrayListOfposts();
 
-        List<Integer> jsonResponse = response.jsonPath().getList("id");
-        for (Integer id : jsonResponse) {
+        Postlist = Arrays.asList(response.getBody().as(ListOfAllPostsSuccessResponse[].class));
 
-        }
+        //Get id from response
+        int id;
+        id = Postlist.size();
 
+        //Verify that the size is id in Post
+        Assert.assertEquals(id, 100);
     }
+
 
     @Test
     public void when_getPostWithUniqueUserIdIsCalled_expect_ListofPostwithSameUserId() {
 
         Response response = postForSpecificUserId();
-
-        SpecificPostWithUserIdSuccessResponse specificpostwithUserId = response.as(SpecificPostWithUserIdSuccessResponse.class);
+        List<SpecificPostWithUserIdSuccessResponse> specificpostwithUserId = Arrays.asList(response.getBody().as(SpecificPostWithUserIdSuccessResponse[].class));
 
         //Get id from response
         int userId;
-        userId = specificpostwithUserId.getUserId();
+        userId = specificpostwithUserId.size();
 
-        //Verify that the username is Samantha
-        Assert.assertEquals(userId, 1);
+        //Verify that the size is UserId in Array
+        Assert.assertEquals(userId, 10);
     }
 
     @Test

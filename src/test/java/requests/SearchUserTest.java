@@ -2,6 +2,8 @@ package requests;
 
 import hook.TestBase;
 import io.restassured.response.Response;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -11,6 +13,9 @@ import responseModels.ListOfAllUsersSuccessResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
+import static org.testng.AssertJUnit.assertNotNull;
 import static utilities.TestUtilities.*;
 
 /**
@@ -56,8 +61,20 @@ public class SearchUserTest extends TestBase {
 
         Response response = arrayListofUsers();
 
-        List<String> jsonResponse = response.jsonPath().getList("$");
-        Assert.assertTrue(!jsonResponse.isEmpty());
+        //List<String> jsonResponse = response.jsonPath().getList("$");
+        //Assert.assertTrue(!jsonResponse.isEmpty());
+
+        String jsonBody = response.getBody().asString();
+
+        try {
+            JSONArray usersArray = new JSONArray(jsonBody);
+            assertNotNull(usersArray);
+            assertTrue(usersArray.length() > 0);
+        } catch (JSONException ex) {
+            fail(ex.getLocalizedMessage());
+        }
+
+
     }
 
     @Test
@@ -92,6 +109,8 @@ public class SearchUserTest extends TestBase {
 
         }
         Assert.assertEquals("Nathan@yesenia.net",jsonResponse.get(2));
+
+
     }
 
     @Test

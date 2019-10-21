@@ -94,8 +94,8 @@ public class FetchUserPostCommentsTest extends TestBase {
 
         Response response = commentsForSpecificPostId();
 
-        List<Integer> jsonResponse = response.jsonPath().getList("postId");
-        for (Integer em : jsonResponse) {
+        List<String> jsonResponse = response.jsonPath().getList("email");
+        for (String emaillist : jsonResponse) {
 
         }
         Assert.assertEquals("Nikita@garfield.biz", jsonResponse.get(2));

@@ -1,11 +1,8 @@
 package utilities;
 
 
-import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.specification.ResponseSpecification;
-
 import java.util.Base64;
 import java.util.Random;
 
@@ -35,12 +32,6 @@ public class TestUtilities {
         String base64DataString = new String(base64EncodedData);
         return base64DataString;
     }
-
-    ResponseSpecification checkStatusCodeAndContentType =
-            new ResponseSpecBuilder().
-                    expectStatusCode(200).
-                    expectContentType(ContentType.JSON).
-                    build();
 
     /**
      * This method creates a valid HTTP GET request to Users.
@@ -80,7 +71,7 @@ public class TestUtilities {
                         pathParam("id", id).
                         when().
                         get(Endpoints.GET_SEARCHUSERS_WITHID).
-                        then().contentType(ContentType.JSON).
+                        then().
                         extract().
                         response();
 
@@ -170,6 +161,7 @@ public class TestUtilities {
         Response response =
                 given().
                         contentType(ContentType.JSON).
+                        queryParam("userId","1").
                         when().
                         get(Endpoints.GET_FETCHPOST_WITHUSERID).
                         then().
@@ -193,6 +185,7 @@ public class TestUtilities {
         Response response =
                 given().
                         contentType(ContentType.JSON).
+                        queryParam("postId","1").
                         when().
                         get(Endpoints.GET_FETCHCOMMENT_WITHPOSTID).
                         then().
@@ -225,7 +218,6 @@ public class TestUtilities {
         return response;
 
     }
-
 
     /**
      * This method creates a valid HTTP GET request to Retrieve the details for the comment using the Id
