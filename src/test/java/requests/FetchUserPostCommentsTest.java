@@ -60,7 +60,6 @@ public class FetchUserPostCommentsTest extends TestBase {
 
         ArrayList<String> names = response.then().extract().path("name");
         for (String m : names) {
-            System.out.println(m);
         }
         Assert.assertEquals("odio adipisci rerum aut animi", names.get(2));
 
@@ -73,7 +72,6 @@ public class FetchUserPostCommentsTest extends TestBase {
 
         ArrayList<Integer> postid = response.then().extract().path("postId");
         for (Integer pid : postid) {
-            System.out.println(pid);
         }
 
     }
@@ -129,8 +127,6 @@ public class FetchUserPostCommentsTest extends TestBase {
     public void when_getCommentIsCalledWithId_expect_emailwithatsign() {
         Response response = commentsForAsingleUser(3);
 
-
     }
-
 
 }

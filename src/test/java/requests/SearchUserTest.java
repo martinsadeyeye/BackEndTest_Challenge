@@ -108,8 +108,7 @@ public class SearchUserTest extends TestBase {
         for (String email : jsonResponse) {
 
         }
-        Assert.assertEquals("Nathan@yesenia.net",jsonResponse.get(2));
-
+        Assert.assertEquals("Nathan@yesenia.net", jsonResponse.get(2));
 
     }
 
