@@ -15,6 +15,8 @@ import static utilities.TestUtilities.*;
 
 public class FetchUserPostCommentsTest extends TestBase {
 
+    ListOfAllCommentsSuccessResponse listofallcomment;
+
     @BeforeTest
     public void setBaseURI() throws IOException {
         initializeBaseURI();
@@ -105,7 +107,7 @@ public class FetchUserPostCommentsTest extends TestBase {
         Response response = commentsForAsingleUser(3);
 
         //Deserialize to a "Type-Detail Response" Object
-        ListOfAllCommentsSuccessResponse listofallcomment = response.as(ListOfAllCommentsSuccessResponse.class);
+        listofallcomment = response.as(ListOfAllCommentsSuccessResponse.class);
 
         //Get Username from response
         String name;
@@ -121,11 +123,31 @@ public class FetchUserPostCommentsTest extends TestBase {
     public void when_getCommentIsCalled_expect_validEmailFormat() {
         Response response = commentsForAsingleUser(3);
 
+        //Deserialize to a "Type-Detail Response" Object
+        listofallcomment = response.as(ListOfAllCommentsSuccessResponse.class);
+
+        //Get Username from response
+        String email;
+        email = listofallcomment.getEmail();
+
+        //Verify that the name is Samantha
+        Assert.assertEquals(email, "Nikita@garfield.biz");
+        Assert.assertTrue(email.contains("."));
     }
 
     @Test
     public void when_getCommentIsCalledWithId_expect_emailwithatsign() {
         Response response = commentsForAsingleUser(3);
+
+        //Deserialize to a "Type-Detail Response" Object
+        listofallcomment = response.as(ListOfAllCommentsSuccessResponse.class);
+
+        //Get Username from response
+        String email;
+        email = listofallcomment.getEmail();
+
+        //Verify that the name is Samantha
+        Assert.assertTrue(email.contains("@"));
 
     }
 
