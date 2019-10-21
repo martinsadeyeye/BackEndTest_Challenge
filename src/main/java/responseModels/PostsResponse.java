@@ -1,25 +1,23 @@
 package responseModels;
 
 
-
 import java.util.HashMap;
 import java.util.Map;
 
-public class ListOfAllCommentsSuccessResponse {
+public class PostsResponse {
 
-    private Integer postId;
+    private Integer userId;
     private Integer id;
-    private String name;
-    private String email;
+    private String title;
     private String body;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public Integer getPostId() {
-        return postId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setPostId(Integer postId) {
-        this.postId = postId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getId() {
@@ -30,20 +28,12 @@ public class ListOfAllCommentsSuccessResponse {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getBody() {

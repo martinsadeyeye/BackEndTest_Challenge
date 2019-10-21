@@ -5,23 +5,31 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import responseModels.ListOfAllPostsSuccessResponse;
-import responseModels.ListOfAllUsersSuccessResponse;
-import responseModels.SpecificPostWithUserIdSuccessResponse;
+import responseModels.PostsResponse;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.Matchers.equalTo;
 import static utilities.TestUtilities.*;
 
 public class FetchUserPostsTest extends TestBase {
 
-    List<ListOfAllPostsSuccessResponse> Postlist;
+    List<PostsResponse> Postlist;
     @BeforeTest
     public void setBaseURI() throws IOException {
         initializeBaseURI();
+    }
+
+    @Test
+    public void when_getPostIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
+        Response response = arrayListOfposts();
+
+        response.
+                then().
+                assertThat().header("Content-Type", "application/json; charset=utf-8").
+                extract().
+                response();
     }
 
     @Test
@@ -39,90 +47,36 @@ public class FetchUserPostsTest extends TestBase {
     }
 
     @Test
-    public void when_getPostIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
-        Response response = arrayListOfposts();
-
-        response.
-                then().
-                assertThat().header("Content-Type", "application/json; charset=utf-8").
-                extract().
-                response();
-    }
-
-    @Test
     public void when_getPostIsCalled_expect_ArrayIsNotEmpty() {
         Response response = arrayListOfposts();
 
-        List<String> jsonResponse = response.jsonPath().getList("$");
-        Assert.assertTrue(!jsonResponse.isEmpty());
-
+        Postlist = Arrays.asList(response.as(PostsResponse[].class));
+        Assert.assertTrue(!Postlist.isEmpty());
     }
 
     @Test
-    public void when_getPostIsCalled_expect_ListOfPostsSizeToBe10() {
+    public void when_getPostIsCalled_expect_ListOfPostsSizeToBe100() {
 
         Response response = arrayListOfposts();
 
-        List<String> jsonResponse = response.jsonPath().getList("$");
-        Assert.assertEquals(100, jsonResponse.size());
-    }
-
-    @Test
-    public void when_getPostIsCalled_expect_ListOfTitle() {
-        Response response = arrayListOfposts();
-
-        List<String> jsonResponse = response.jsonPath().getList("title");
-
-        for (String post : jsonResponse) {
-        }
-
-        Assert.assertEquals("ea molestias quasi exercitationem repellat qui ipsa sit aut", jsonResponse.get(2));
-    }
-
-    @Test
-    public void when_getPostIsCalled_expect_SamanthasIdshouldbeOntheList() {
-
-        Response response = arrayListOfposts();
-
-        Postlist = Arrays.asList(response.getBody().as(ListOfAllPostsSuccessResponse[].class));
-
-        //Get id from response
-        int id;
-        id = Postlist.size();
-
-        //Verify that the size is id in Post
-        Assert.assertEquals(id, 100);
+        Postlist = Arrays.asList(response.as(PostsResponse[].class));
+        Assert.assertEquals(100, Postlist.size());
     }
 
 
     @Test
-    public void when_getPostWithUniqueUserIdIsCalled_expect_ListofPostwithSameUserId() {
-
-        Response response = postForSpecificUserId();
-        List<SpecificPostWithUserIdSuccessResponse> specificpostwithUserId = Arrays.asList(response.getBody().as(SpecificPostWithUserIdSuccessResponse[].class));
-
-        //Get id from response
-        int userId;
-        userId = specificpostwithUserId.size();
-
-        //Verify that the size is UserId in Array
-        Assert.assertEquals(userId, 10);
-    }
-
-    @Test
-    public void when_getPostWithUniqueIdIsCalled_expect_SingleData() {
+    public void when_getPostWithUniqueId3IsCalled_expect_postforUserWithId3() {
 
         Response response = postForSpecificId(3);
 
-        ListOfAllPostsSuccessResponse listofAllPost = response.as(ListOfAllPostsSuccessResponse.class);
+        PostsResponse listofAllPost = response.as(PostsResponse.class);
 
         //Get title from response
         String title;
         title = listofAllPost.getTitle();
 
-        //Verify that the username is Samantha
+        //Verify that the title is Samantha
         Assert.assertEquals(title, "ea molestias quasi exercitationem repellat qui ipsa sit aut");
     }
-
 
 }

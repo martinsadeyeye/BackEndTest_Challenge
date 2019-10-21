@@ -2,20 +2,16 @@ package requests;
 
 import hook.TestBase;
 import io.restassured.response.Response;
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import responseModels.ListOfAllUsersSuccessResponse;
+import responseModels.UsersResponse;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
-import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.fail;
-import static org.testng.AssertJUnit.assertNotNull;
 import static utilities.TestUtilities.*;
 
 /**
@@ -24,6 +20,8 @@ import static utilities.TestUtilities.*;
  * @author Martins Adeyeye
  */
 public class SearchUserTest extends TestBase {
+
+    List<UsersResponse> userresponse;
 
     /**
      * Before the tests, it initializes the base URI
@@ -40,6 +38,17 @@ public class SearchUserTest extends TestBase {
     @BeforeMethod
     public void uniqueIDForEachMethod() {
         generateID();
+    }
+
+    @Test
+    public void when_getUserIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
+        Response response = arrayListofUsers();
+
+        response.
+                then().
+                assertThat().header("Content-Type", "application/json; charset=utf-8").
+                extract().
+                response();
     }
 
     @Test
@@ -61,85 +70,37 @@ public class SearchUserTest extends TestBase {
 
         Response response = arrayListofUsers();
 
-        //List<String> jsonResponse = response.jsonPath().getList("$");
-        //Assert.assertTrue(!jsonResponse.isEmpty());
-
-        String jsonBody = response.getBody().asString();
-
-        try {
-            JSONArray usersArray = new JSONArray(jsonBody);
-            assertNotNull(usersArray);
-            assertTrue(usersArray.length() > 0);
-        } catch (JSONException ex) {
-            fail(ex.getLocalizedMessage());
-        }
-
+        userresponse = Arrays.asList(response.as(UsersResponse[].class));
+        Assert.assertTrue(!userresponse.isEmpty());
 
     }
 
     @Test
-    public void when_getUserIsCalled_expect_ArrayListOfUsers() {
+    public void when_getUserIsCalled_expect_SamanthaToBeOnUserList() {
         Response response = arrayListofUsers();
 
-        List<String> jsonResponse = response.jsonPath().getList("username");
-        Assert.assertEquals(10, jsonResponse.size());
+        userresponse = Arrays.asList(response.as(UsersResponse[].class));
+        Assert.assertEquals(10, userresponse.size());
 
         String Username = response.then().extract().path("[2].username");
         Assert.assertEquals(Username, "Samantha");
     }
 
-    @Test
-    public void when_getUserIsCalled_expect_ArrayListOfUsername() {
-        Response response = arrayListofUsers();
-
-        List<String> jsonResponse = response.jsonPath().getList("username");
-        for (String em : jsonResponse) {
-
-        }
-
-        Assert.assertEquals("Samantha", jsonResponse.get(2));
-    }
 
     @Test
-    public void when_getUserIsCalled_expect_ArrayListOfUserId() {
-        Response response = arrayListofUsers();
-
-        List<String> jsonResponse = response.jsonPath().getList("email");
-        for (String email : jsonResponse) {
-
-        }
-        Assert.assertEquals("Nathan@yesenia.net", jsonResponse.get(2));
-
-    }
-
-    @Test
-    public void when_getUserIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
-        Response response = arrayListofUsers();
-
-        response.
-                then().
-                assertThat().header("Content-Type", "application/json; charset=utf-8").
-                extract().
-                response();
-    }
-
-
-    @Test
-    public void when_getUserWithUniqueIdIsCalled_expect_UsernameSamantha() {
+    public void when_getUserWithUniqueId3IsCalled_expect_UsernameSamantha() {
 
         Response response = userWithID(3);
 
-        //Deserialize to a "Type-Detail Response" Object
-        ListOfAllUsersSuccessResponse listofalluser = response.as(ListOfAllUsersSuccessResponse.class);
+        UsersResponse specificid = response.as(UsersResponse.class);
 
         //Get Username from response
         String username;
-        username = listofalluser.getUsername();
+        username = specificid.getUsername();
 
         //Verify that the username is Samantha
         Assert.assertEquals(username, "Samantha");
 
-        response.prettyPrint();
     }
 
 }

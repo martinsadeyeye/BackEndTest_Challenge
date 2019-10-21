@@ -3,7 +3,7 @@ package responseModels;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ListOfAllUsersSuccessResponse {
+public class UsersResponse {
 
     private Integer id;
     private String name;
