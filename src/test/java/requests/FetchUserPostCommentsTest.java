@@ -6,8 +6,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import responseModels.CommentsResponse;
+import responseModels.PostsResponse;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,105 +18,70 @@ import static utilities.TestUtilities.*;
 
 public class FetchUserPostCommentsTest extends TestBase {
 
-    List<CommentsResponse> commentsList;
-
-    CommentsResponse comments;
-
     @BeforeTest
     public void setBaseURI() throws IOException {
         initializeBaseURI();
     }
 
     @Test
-    public void when_getCommentIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
+    public void when_getCommentsIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
         Response response = arrayListOfComments();
 
-        response.
-                then().
-                assertThat().header("Content-Type", "application/json; charset=utf-8").
-                extract().
-                response();
+        Assert.assertEquals("application/json; charset=utf-8", response.contentType()); //Validate HTTP Status Code from response
     }
 
     @Test
-    public void when_getCommentIsCalled_expect_HTTPStatusCode200() {
+    public void when_getCommentsIsCalled_expect_HTTPStatusCode200() {
 
         Response response = arrayListOfComments();
-
-        response.
-                then().
-                assertThat().statusCode(200). //Verify HTTP Status Code from response
-                extract().
-                response();
 
         Assert.assertEquals(200, response.statusCode()); //Validate HTTP Status Code from response
     }
 
     @Test
-    public void when_getCommentIsCalled_expect_ArrayIsNotEmpty() {
+    public void when_getCommentsIsCalled_expect_ArrayIsNotEmpty() {
 
         Response response = arrayListOfComments();
 
-        commentsList = Arrays.asList(response.as(CommentsResponse[].class));
-        Assert.assertTrue(!commentsList.isEmpty());
+        List<CommentsResponse> comments = Arrays.asList(response.as(CommentsResponse[].class));
+        Assert.assertTrue(!comments.isEmpty());
     }
 
     @Test
-    public void when_getCommentWithUniquePostId1IsCalled_expect_ListofCommentswithSamePostId() {
+    public void when_getCommentIsCalledWithPostId_expect_OnlyCommentsRelatedToSpecifiedPost() {
+        Response response = commentsForSpecificPostId(1);
 
-        Response response = commentsForSpecificPostId();
+        List<CommentsResponse> comments = Arrays.asList(response.as(CommentsResponse[].class));
 
-        commentsList = Arrays.asList(response.as(CommentsResponse[].class));
-
-        //Verify that the name on the comment
-        Assert.assertEquals("odio adipisci rerum aut animi", commentsList.get(2).getName());
-
+        for(int i = 0; i < comments.size(); i++) {
+            Assert.assertEquals(comments.get(i).getPostId(), 1);
+        }
     }
 
     @Test
-    public void when_getCommentWithUniqueIdIsCalled_expect_SingledatawithSpecifiedIdComments() {
-        Response response = commentsForAsingleUser(3);
+    public void when_getCommentsIsCalled_expect_ResultCanBeFilteredByUser() {
+        Response getUserPosts = postsByUserId(3); //All User's posts
 
-        //Deserialize to a "Type-Detail Response" Object
-        comments = response.as(CommentsResponse.class);
+        List<PostsResponse> userPosts = Arrays.asList(getUserPosts.as(PostsResponse[].class));
 
-        //Get name from response
-        String name;
-        name = comments.getName();
+        List<Integer> postIds = new ArrayList<>();
 
-        //Verify that the name is Samantha
-        Assert.assertEquals(name, "odio adipisci rerum aut animi");
+        //Set User's Post IDs in an Array List
+        for(int i = 0; i < userPosts.size(); i++) {
+            postIds.add(userPosts.get(i).getId());
+        }
 
-    }
+        //Retrieve all comments related to User's post
+        for(int postId : postIds) {
+            Response getCommentsByPostId = commentsForSpecificPostId(postId);
+            List<CommentsResponse> postComments = Arrays.asList(getCommentsByPostId.as(CommentsResponse[].class));
 
-    @Test
-    public void when_getCommentWithId3IsCalled_expect_validEmailFormat() {
-        Response response = commentsForAsingleUser(3);
+            //Verify email format
+            for(int i = 0; i < postComments.size(); i++) {
+                String email = postComments.get(i).getEmail();
+                Assert.assertTrue(isEmailValid(email));
+            }
+        }
 
-        //Deserialize to a "Type-Detail Response" Object
-        comments = response.as(CommentsResponse.class);
-
-        //Get email from response
-        String email;
-        email = comments.getEmail();
-
-        //Verify that the email is for Samantha and contains . sign
-        Assert.assertEquals(email, "Nikita@garfield.biz");
-        Assert.assertTrue(email.contains("."));
-    }
-
-    @Test
-    public void when_getCommentWithId3IsCalled_expect_emailThathasAtSign() {
-        Response response = commentsForAsingleUser(3);
-
-        //Deserialize to a "Type-Detail Response" Object
-        comments = response.as(CommentsResponse.class);
-
-        //Get Username from response
-        String email;
-        email = comments.getEmail();
-
-        //Verify that the name is Samantha
-        Assert.assertTrue(email.contains("@"));
     }
 }

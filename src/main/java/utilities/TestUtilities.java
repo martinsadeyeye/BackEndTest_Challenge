@@ -3,8 +3,6 @@ package utilities;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import java.util.Base64;
-import java.util.Random;
 
 import static io.restassured.RestAssured.given;
 
@@ -18,24 +16,8 @@ public class TestUtilities {
 
     public static int id;
 
-
     /**
-     * This utility method performs Base64 encode operation using RFC4648 encoder.
-     * This is based on the assumption that the Base64 encoded data required by the
-     * endpoints should be in this format.
-     *
-     * @param s String to be encoded
-     * @return A Base64 encoded string
-     **/
-    public static String encodeInBase64(String s) {
-        byte[] base64EncodedData = Base64.getEncoder().encode(s.getBytes());
-        String base64DataString = new String(base64EncodedData);
-        return base64DataString;
-    }
-
-    /**
-     * This method creates a valid HTTP GET request to Users.
-     * It also logs all request details.
+     * This method creates a valid HTTP GET request to retrieve all Users.
      *
      * @return response
      */
@@ -46,7 +28,7 @@ public class TestUtilities {
                 given().
                         contentType(ContentType.JSON).
                         when().
-                        get(Endpoints.GET_SEARCHUSERS).
+                        get(Endpoints.GET_USERS).
                         then().
                         extract().
                         response();
@@ -57,8 +39,10 @@ public class TestUtilities {
 
 
     /**
-     * This method creates a valid HTTP GET request to Retrieve the details for User with the Id.
-     * It also logs all request details.
+     * This method creates a valid HTTP GET request
+     * to retrieve the details for User with the specified id.
+     *
+     * @param id
      *
      * @return response
      */
@@ -70,7 +54,7 @@ public class TestUtilities {
                         accept(ContentType.JSON).
                         pathParam("id", id).
                         when().
-                        get(Endpoints.GET_SEARCHUSERS_WITHID).
+                        get(Endpoints.GET_USERS_BY_ID).
                         then().
                         extract().
                         response();
@@ -80,31 +64,8 @@ public class TestUtilities {
     }
 
     /**
-     * This method creates a valid HTTP GET request to Posts.
-     * It also logs all request details.
-     *
-     * @return response
-     */
-
-    public static Response arrayListOfposts() {
-
-        Response response =
-                given().
-                        contentType(ContentType.JSON).
-                        when().
-                        get(Endpoints.GET_FETCHPOSTS).
-                        then().
-                        extract().
-                        response();
-
-        return response;
-
-    }
-
-
-    /**
-     * This method creates a valid HTTP GET request to Comments.
-     * It also logs all request details.
+     * This method creates a valid HTTP GET request
+     * to retrieve all comments.
      *
      * @return response
      */
@@ -115,7 +76,32 @@ public class TestUtilities {
                 given().
                         contentType(ContentType.JSON).
                         when().
-                        get(Endpoints.GET_FETCHCOMMENTS).
+                        get(Endpoints.GET_COMMENTS).
+                        then().
+                        extract().
+                        response();
+
+        return response;
+
+    }
+
+    /**
+     * This method creates a valid HTTP GET request
+     * to retrieve all posts related to a specific UserId.
+     *
+     * @param id
+     *
+     * @return response
+     */
+
+    public static Response postsByUserId(int id) {
+
+        Response response =
+                given().
+                        contentType(ContentType.JSON).
+                        queryParam("userId", id).
+                        when().
+                        get(Endpoints.GET_POSTS).
                         then().
                         extract().
                         response();
@@ -126,91 +112,22 @@ public class TestUtilities {
 
 
     /**
-     * This method creates a valid HTTP GET request to Retrieve the details for Post with the Id.
-     * It also logs all request details.
+     * This method creates a valid HTTP GET request
+     * to get comments for a specific PostId.
+     *
+     * @param postId
      *
      * @return response
      */
 
-    public static Response postForSpecificId(int id) {
+    public static Response commentsForSpecificPostId(int postId) {
 
         Response response =
                 given().
                         contentType(ContentType.JSON).
-                        pathParam("id", id).
+                        queryParam("postId", postId).
                         when().
-                        get(Endpoints.GET_FETCHPOST_WITHID).
-                        then().
-                        extract().
-                        response();
-
-        return response;
-
-    }
-
-
-    /**
-     * This method creates a valid HTTP GET request to Posts Using UserId.
-     * It also logs all request details.
-     *
-     * @return response
-     */
-
-    public static Response postForSpecificUserId() {
-
-        Response response =
-                given().
-                        contentType(ContentType.JSON).
-                        queryParam("userId","1").
-                        when().
-                        get(Endpoints.GET_FETCHPOST_WITHUSERID).
-                        then().
-                        extract().
-                        response();
-
-        return response;
-
-    }
-
-
-    /**
-     * This method creates a valid HTTP GET request to comments for a specific PostId.
-     * It also logs all request details.
-     *
-     * @return response
-     */
-
-    public static Response commentsForSpecificPostId() {
-
-        Response response =
-                given().
-                        contentType(ContentType.JSON).
-                        queryParam("postId","1").
-                        when().
-                        get(Endpoints.GET_FETCHCOMMENT_WITHPOSTID).
-                        then().
-                        extract().
-                        response();
-
-        return response;
-
-    }
-
-
-    /**
-     * This method creates a valid HTTP GET request to Retrieve all comment for PostId but  returns All Comments for all the POSts and user.
-     * It also logs all request details.
-     *
-     * @return response
-     */
-
-    public static Response commentforaPostID() {
-
-        Response response =
-                given().
-                        contentType(ContentType.JSON).
-                        when().
-                        get(Endpoints.GET_FETCHCOMMENT_WITHPID).
+                        get(Endpoints.GET_COMMENTS).
                         then().
                         extract().
                         response();
@@ -220,30 +137,14 @@ public class TestUtilities {
     }
 
     /**
-     * This method creates a valid HTTP GET request to Retrieve the details for the comment using the Id
-     * It also logs all request details.
+     * This helper method validates email format
      *
-     * @return response
+     * @param email
+     *
+     * @return boolean
      */
-
-    public static Response commentsForAsingleUser(int id) {
-
-        Response response =
-                given().
-                        contentType(ContentType.JSON).
-                        pathParam("id", id).
-                        when().
-                        get(Endpoints.GET_FETCHCOMMENTS_WITHID).
-                        then().
-                        extract().
-                        response();
-
-        return response;
-
-    }
-
-    public static void generateID() {
-        Random randomID = new Random();
-        id = (int) (randomID.nextLong() & Long.MAX_VALUE); //Positive random IDs
+    public static boolean isEmailValid(String email) {
+        String regex = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        return email.matches(regex);
     }
 }

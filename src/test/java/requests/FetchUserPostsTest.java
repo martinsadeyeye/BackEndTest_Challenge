@@ -22,61 +22,44 @@ public class FetchUserPostsTest extends TestBase {
     }
 
     @Test
-    public void when_getPostIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
-        Response response = arrayListOfposts();
+    public void when_getPostByUserIdIsCalledWithValidUserId_expect_HeaderContentTypeToBeApplicationJson() {
+        Response response = postsByUserId(3);
 
-        response.
-                then().
-                assertThat().header("Content-Type", "application/json; charset=utf-8").
-                extract().
-                response();
+        Assert.assertEquals("application/json; charset=utf-8", response.contentType()); //Validate Content Type from response
     }
 
     @Test
-    public void when_getPostIsCalled_expect_HTTPStatusCode200() {
+    public void when_getPostByUserIdIsCalledWithValidUserId_expect_HTTPStatusCode200() {
 
-        Response response = arrayListOfposts();
-
-        response.
-                then().
-                assertThat().statusCode(200). //Verify HTTP Status Code from response
-                extract().
-                response();
+        Response response = postsByUserId(3);
 
         Assert.assertEquals(200, response.statusCode()); //Validate HTTP Status Code from response
     }
 
     @Test
-    public void when_getPostIsCalled_expect_ArrayIsNotEmpty() {
-        Response response = arrayListOfposts();
+    public void when_getPostByUserIdIsCalledWithValidUserId_expect_ArrayIsNotEmpty() {
+        Response response = postsByUserId(3);
 
         Postlist = Arrays.asList(response.as(PostsResponse[].class));
         Assert.assertTrue(!Postlist.isEmpty());
     }
 
     @Test
-    public void when_getPostIsCalled_expect_ListOfPostsSizeToBe100() {
-
-        Response response = arrayListOfposts();
+    public void when_getPostByUserIdIsCalledWithValidUserId_expect_OnlySpecifiedUserPostsAreReturned() {
+        Response response = postsByUserId(3);
 
         Postlist = Arrays.asList(response.as(PostsResponse[].class));
-        Assert.assertEquals(100, Postlist.size());
-    }
 
+        for (int i = 0; i < Postlist.size(); i++) {
+            Assert.assertEquals(Postlist.get(i).getUserId(), 3);
+        }
+    }
 
     @Test
-    public void when_getPostWithUniqueId3IsCalled_expect_postforUserWithId3() {
+    public void when_getPostByUserIdIsCalledWithInvalidUserId_expect_EmptyResult() {
+        Response response = postsByUserId(0);
 
-        Response response = postForSpecificId(3);
-
-        PostsResponse listofAllPost = response.as(PostsResponse.class);
-
-        //Get title from response
-        String title;
-        title = listofAllPost.getTitle();
-
-        //Verify that the title is Samantha
-        Assert.assertEquals(title, "ea molestias quasi exercitationem repellat qui ipsa sit aut");
+        Postlist = Arrays.asList(response.as(PostsResponse[].class));
+        Assert.assertTrue(Postlist.isEmpty());
     }
-
 }

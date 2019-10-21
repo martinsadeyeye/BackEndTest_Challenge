@@ -2,14 +2,10 @@ package utilities;
 
 public interface Endpoints {
 
-    String GET_SEARCHUSERS = "/users";
-    String GET_SEARCHUSERS_WITHID = "/users/{id}";
-    String GET_FETCHPOSTS = "/posts";
-    String GET_FETCHCOMMENTS = "/comments";
-    String GET_FETCHPOST_WITHID = "/posts/{id}";
-    String GET_FETCHPOST_WITHUSERID = "/posts";
-    String GET_FETCHCOMMENT_WITHPOSTID = "/comments";
-    String GET_FETCHCOMMENT_WITHPID = "/posts/1/comments";
-    String GET_FETCHCOMMENTS_WITHID = "/comments/{id}";
-
+    String GET_USERS = "/users";
+    String GET_USERS_BY_ID = "/users/{id}";
+    String GET_POSTS = "/posts";
+    String GET_COMMENTS = "/comments";
+    String GET_POSTS_BY_ID = "/posts/{id}";
+    String GET_COMMENTS_BY_ID = "/comments/{id}";
 }

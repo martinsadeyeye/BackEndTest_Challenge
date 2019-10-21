@@ -35,38 +35,24 @@ public class SearchUserTest extends TestBase {
         initializeBaseURI();
     }
 
-    @BeforeMethod
-    public void uniqueIDForEachMethod() {
-        generateID();
+    @Test
+    public void when_getUsersIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
+        Response response = arrayListofUsers();
+
+        Assert.assertEquals("application/json; charset=utf-8", response.contentType()); //Validate HTTP Status Code from response
+
     }
 
     @Test
-    public void when_getUserIsCalled_expect_HeaderContentTypeToBeApplicationJson() {
-        Response response = arrayListofUsers();
-
-        response.
-                then().
-                assertThat().header("Content-Type", "application/json; charset=utf-8").
-                extract().
-                response();
-    }
-
-    @Test
-    public void when_getUserIsCalled_expect_HTTPStatusCode200() {
+    public void when_getUsersIsCalled_expect_HTTPStatusCode200() {
 
         Response response = arrayListofUsers();
-
-        response.
-                then().
-                assertThat().statusCode(200). //Verify HTTP Status Code from response
-                extract().
-                response();
 
         Assert.assertEquals(200, response.statusCode()); //Validate HTTP Status Code from response
     }
 
     @Test
-    public void when_getUserIsCalled_expect_ArrayIsNotEmpty() {
+    public void when_getUsersIsCalled_expect_ArrayIsNotEmpty() {
 
         Response response = arrayListofUsers();
 
@@ -76,31 +62,61 @@ public class SearchUserTest extends TestBase {
     }
 
     @Test
-    public void when_getUserIsCalled_expect_SamanthaToBeOnUserList() {
+    public void when_getUsersIsCalled_expect_SamanthaToBeOnUserList() {
         Response response = arrayListofUsers();
 
         userresponse = Arrays.asList(response.as(UsersResponse[].class));
-        Assert.assertEquals(10, userresponse.size());
 
-        String Username = response.then().extract().path("[2].username");
-        Assert.assertEquals(Username, "Samantha");
+        String username = userresponse.get(2).getUsername();
+        Assert.assertEquals(username, "Samantha");
     }
 
-
     @Test
-    public void when_getUserWithUniqueId3IsCalled_expect_UsernameSamantha() {
+    public void when_getUserIsCalledWithUserId3_expect_HTTPStatusCode200() {
 
         Response response = userWithID(3);
 
-        UsersResponse specificid = response.as(UsersResponse.class);
+        Assert.assertEquals(200, response.statusCode()); //Validate HTTP Status Code from response
+    }
+
+    @Test
+    public void when_getUserIsCalledWithUserId3_expect_UsernameSamantha() {
+
+        Response response = userWithID(3);
+
+        UsersResponse user = response.as(UsersResponse.class);
 
         //Get Username from response
         String username;
-        username = specificid.getUsername();
+        username = user.getUsername();
 
         //Verify that the username is Samantha
         Assert.assertEquals(username, "Samantha");
 
     }
 
+    @Test
+    public void when_getUserIsCalledWithUserId3_expect_IdIs3() {
+
+        Response response = userWithID(3);
+
+        UsersResponse user = response.as(UsersResponse.class);
+
+        //Get Username from response
+        int id;
+        id = user.getId();
+
+        //Verify that the username is Samantha
+        Assert.assertEquals(id, 3);
+
+    }
+
+    @Test
+    public void when_getUserIsCalledWithNonExistingUserId_expect_NoResult() {
+
+        Response response = userWithID(99999);
+
+        //Verify that the result is empty
+        Assert.assertEquals(response.getBody().asString(), "{}");
+    }
 }
