@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1faecb6b-9e4c-46cb-a7b7-5aa709293167" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/responseModels/CommentsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/responseModels/CommentsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/responseModels/PostsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/responseModels/PostsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/responseModels/UsersResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/responseModels/UsersResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/Endpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/Endpoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/TestUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/TestUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/requests/FetchUserPostCommentsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/requests/FetchUserPostCommentsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/requests/FetchUserPostsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/requests/FetchUserPostsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/requests/SearchUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/requests/SearchUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/responseModels/CommentsResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/responseModels/CommentsResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/responseModels/PostsResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/responseModels/PostsResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/responseModels/UsersResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/responseModels/UsersResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utilities/Endpoints.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utilities/Endpoints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utilities/TestUtilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utilities/TestUtilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/requests/FetchUserPostCommentsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/requests/FetchUserPostCommentsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/requests/FetchUserPostsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/requests/FetchUserPostsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/requests/SearchUserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/requests/SearchUserTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/ExtentReportsTestNG.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/ExtentReportsTestNG.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,17 +17,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -118,10 +91,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="y" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1048" />
+    <option name="x" value="950" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -129,6 +101,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -141,15 +114,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LinkedIn Learning/Ex_Files_Selenium_EssT/Exercise Files/02_02/start" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MARTINS\Desktop\UserBlogTesting" />
       <recent name="C:\Users\MARTINS\Desktop\UserBlogTesting\src\main\java\responseModels" />
       <recent name="C:\Users\MARTINS\UserBlogTesting\src\main\resources" />
     </key>
@@ -273,9 +246,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FetchUserPostCommentsTest_when_getCommentsIsCalled_expect_SpecificUserPostCanBeFiltered - 2019.10.21 at 19h 54m 42s.xml">
-      <configuration name="FetchUserPostCommentsTest.when_getCommentsIsCalled_expect_SpecificUserPostCanBeFiltered" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="FetchUserPostCommentsTest_when_getCommentsIsCalled_expect_SpecificUserPostCanBeFiltered - 2019.10.21 at 19h 55m 46s.xml">
       <configuration name="FetchUserPostCommentsTest.when_getCommentsIsCalled_expect_SpecificUserPostCanBeFiltered" configurationId="TestNG" />
     </history-entry>
@@ -303,11 +273,14 @@
     <history-entry file="C__Users_MARTINS_Desktop_UserBlogTesting_UserBlogTesting-Suite-Runner_xml - 2019.10.21 at 20h 58m 06s.xml">
       <configuration name="C:/Users/MARTINS/Desktop/UserBlogTesting/UserBlogTesting-Suite-Runner.xml" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="C__Users_MARTINS_Desktop_UserBlogTesting_UserBlogTesting-Suite-Runner_xml - 2019.10.21 at 21h 10m 21s.xml">
+      <configuration name="C:/Users/MARTINS/Desktop/UserBlogTesting/UserBlogTesting-Suite-Runner.xml" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18724832" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19798657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -316,7 +289,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23937677" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23937677" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -363,6 +336,9 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven" order="7" weight="0.32871014" />
     </layout-to-restore>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/UserBlogTesting$SearchUserTest.ic" NAME="SearchUserTest Coverage Results" MODIFIED="1571646846815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -555,7 +531,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
