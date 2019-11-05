@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-UserBlog_Test_Suite">
+              <span class="suite-name border-passed">UserBlog Test Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-UserBlog_Test_Suite">
+                    <span>C:\Users\MARTINS\Desktop\UserBlogTesting\UserBlogTesting-Suite-Runner.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-UserBlog_Test_Suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-UserBlog_Test_Suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-UserBlog_Test_Suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-UserBlog_Test_Suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-UserBlog_Test_Suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-UserBlog_Test_Suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">18 methods,   18 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-UserBlog_Test_Suite" class="hide-methods passed suite-UserBlog_Test_Suite"> (hide)</a> <!-- hide-methods passed suite-UserBlog_Test_Suite -->
+                      <a href="#" panel-name="suite-UserBlog_Test_Suite" class="show-methods passed suite-UserBlog_Test_Suite"> (show)</a> <!-- show-methods passed suite-UserBlog_Test_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-UserBlog_Test_Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostCommentsTest" hash-for-method="when_getCommentIsCalledWithPostId_expect_OnlyCommentsRelatedToSpecifiedPost">when_getCommentIsCalledWithPostId_expect_OnlyCommentsRelatedToSpecifiedPost</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostCommentsTest" hash-for-method="when_getCommentsIsCalled_expect_ArrayIsNotEmpty">when_getCommentsIsCalled_expect_ArrayIsNotEmpty</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostCommentsTest" hash-for-method="when_getCommentsIsCalled_expect_HTTPStatusCode200">when_getCommentsIsCalled_expect_HTTPStatusCode200</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostCommentsTest" hash-for-method="when_getCommentsIsCalled_expect_HeaderContentTypeToBeApplicationJson">when_getCommentsIsCalled_expect_HeaderContentTypeToBeApplicationJson</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostCommentsTest" hash-for-method="when_getCommentsIsCalled_expect_ResultCanBeFilteredByUser">when_getCommentsIsCalled_expect_ResultCanBeFilteredByUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostsTest" hash-for-method="when_getPostByUserIdIsCalledWithInvalidUserId_expect_EmptyResult">when_getPostByUserIdIsCalledWithInvalidUserId_expect_EmptyResult</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostsTest" hash-for-method="when_getPostByUserIdIsCalledWithValidUserId_expect_ArrayIsNotEmpty">when_getPostByUserIdIsCalledWithValidUserId_expect_ArrayIsNotEmpty</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostsTest" hash-for-method="when_getPostByUserIdIsCalledWithValidUserId_expect_HTTPStatusCode200">when_getPostByUserIdIsCalledWithValidUserId_expect_HTTPStatusCode200</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostsTest" hash-for-method="when_getPostByUserIdIsCalledWithValidUserId_expect_HeaderContentTypeToBeApplicationJson">when_getPostByUserIdIsCalledWithValidUserId_expect_HeaderContentTypeToBeApplicationJson</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.FetchUserPostsTest" hash-for-method="when_getPostByUserIdIsCalledWithValidUserId_expect_OnlySpecifiedUserPostsAreReturned">when_getPostByUserIdIsCalledWithValidUserId_expect_OnlySpecifiedUserPostsAreReturned</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.SearchUserTest" hash-for-method="when_getUserIsCalledWithNonExistingUserId_expect_NoResult">when_getUserIsCalledWithNonExistingUserId_expect_NoResult</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.SearchUserTest" hash-for-method="when_getUserIsCalledWithUserId3_expect_HTTPStatusCode200">when_getUserIsCalledWithUserId3_expect_HTTPStatusCode200</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.SearchUserTest" hash-for-method="when_getUserIsCalledWithUserId3_expect_IdIs3">when_getUserIsCalledWithUserId3_expect_IdIs3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.SearchUserTest" hash-for-method="when_getUserIsCalledWithUserId3_expect_UsernameSamantha">when_getUserIsCalledWithUserId3_expect_UsernameSamantha</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.SearchUserTest" hash-for-method="when_getUsersIsCalled_expect_ArrayIsNotEmpty">when_getUsersIsCalled_expect_ArrayIsNotEmpty</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.SearchUserTest" hash-for-method="when_getUsersIsCalled_expect_HTTPStatusCode200">when_getUsersIsCalled_expect_HTTPStatusCode200</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.SearchUserTest" hash-for-method="when_getUsersIsCalled_expect_HeaderContentTypeToBeApplicationJson">when_getUsersIsCalled_expect_HeaderContentTypeToBeApplicationJson</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-UserBlog_Test_Suite" title="requests.SearchUserTest" hash-for-method="when_getUsersIsCalled_expect_SamanthaToBeOnUserList">when_getUsersIsCalled_expect_SamanthaToBeOnUserList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-UserBlog_Test_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-UserBlog_Test_Suite" class="panel UserBlog_Test_Suite">
+          <div class="suite-UserBlog_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">requests.FetchUserPostCommentsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getCommentIsCalledWithPostId_expect_OnlyCommentsRelatedToSpecifiedPost">
+                  </a> <!-- when_getCommentIsCalledWithPostId_expect_OnlyCommentsRelatedToSpecifiedPost -->
+                  <span class="method-name">when_getCommentIsCalledWithPostId_expect_OnlyCommentsRelatedToSpecifiedPost</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getCommentsIsCalled_expect_ArrayIsNotEmpty">
+                  </a> <!-- when_getCommentsIsCalled_expect_ArrayIsNotEmpty -->
+                  <span class="method-name">when_getCommentsIsCalled_expect_ArrayIsNotEmpty</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getCommentsIsCalled_expect_HTTPStatusCode200">
+                  </a> <!-- when_getCommentsIsCalled_expect_HTTPStatusCode200 -->
+                  <span class="method-name">when_getCommentsIsCalled_expect_HTTPStatusCode200</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getCommentsIsCalled_expect_HeaderContentTypeToBeApplicationJson">
+                  </a> <!-- when_getCommentsIsCalled_expect_HeaderContentTypeToBeApplicationJson -->
+                  <span class="method-name">when_getCommentsIsCalled_expect_HeaderContentTypeToBeApplicationJson</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getCommentsIsCalled_expect_ResultCanBeFilteredByUser">
+                  </a> <!-- when_getCommentsIsCalled_expect_ResultCanBeFilteredByUser -->
+                  <span class="method-name">when_getCommentsIsCalled_expect_ResultCanBeFilteredByUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-UserBlog_Test_Suite-class-passed -->
+          <div class="suite-UserBlog_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">requests.SearchUserTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getUserIsCalledWithNonExistingUserId_expect_NoResult">
+                  </a> <!-- when_getUserIsCalledWithNonExistingUserId_expect_NoResult -->
+                  <span class="method-name">when_getUserIsCalledWithNonExistingUserId_expect_NoResult</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getUserIsCalledWithUserId3_expect_HTTPStatusCode200">
+                  </a> <!-- when_getUserIsCalledWithUserId3_expect_HTTPStatusCode200 -->
+                  <span class="method-name">when_getUserIsCalledWithUserId3_expect_HTTPStatusCode200</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getUserIsCalledWithUserId3_expect_IdIs3">
+                  </a> <!-- when_getUserIsCalledWithUserId3_expect_IdIs3 -->
+                  <span class="method-name">when_getUserIsCalledWithUserId3_expect_IdIs3</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getUserIsCalledWithUserId3_expect_UsernameSamantha">
+                  </a> <!-- when_getUserIsCalledWithUserId3_expect_UsernameSamantha -->
+                  <span class="method-name">when_getUserIsCalledWithUserId3_expect_UsernameSamantha</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getUsersIsCalled_expect_ArrayIsNotEmpty">
+                  </a> <!-- when_getUsersIsCalled_expect_ArrayIsNotEmpty -->
+                  <span class="method-name">when_getUsersIsCalled_expect_ArrayIsNotEmpty</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getUsersIsCalled_expect_HTTPStatusCode200">
+                  </a> <!-- when_getUsersIsCalled_expect_HTTPStatusCode200 -->
+                  <span class="method-name">when_getUsersIsCalled_expect_HTTPStatusCode200</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getUsersIsCalled_expect_HeaderContentTypeToBeApplicationJson">
+                  </a> <!-- when_getUsersIsCalled_expect_HeaderContentTypeToBeApplicationJson -->
+                  <span class="method-name">when_getUsersIsCalled_expect_HeaderContentTypeToBeApplicationJson</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getUsersIsCalled_expect_SamanthaToBeOnUserList">
+                  </a> <!-- when_getUsersIsCalled_expect_SamanthaToBeOnUserList -->
+                  <span class="method-name">when_getUsersIsCalled_expect_SamanthaToBeOnUserList</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-UserBlog_Test_Suite-class-passed -->
+          <div class="suite-UserBlog_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">requests.FetchUserPostsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getPostByUserIdIsCalledWithInvalidUserId_expect_EmptyResult">
+                  </a> <!-- when_getPostByUserIdIsCalledWithInvalidUserId_expect_EmptyResult -->
+                  <span class="method-name">when_getPostByUserIdIsCalledWithInvalidUserId_expect_EmptyResult</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getPostByUserIdIsCalledWithValidUserId_expect_ArrayIsNotEmpty">
+                  </a> <!-- when_getPostByUserIdIsCalledWithValidUserId_expect_ArrayIsNotEmpty -->
+                  <span class="method-name">when_getPostByUserIdIsCalledWithValidUserId_expect_ArrayIsNotEmpty</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getPostByUserIdIsCalledWithValidUserId_expect_HTTPStatusCode200">
+                  </a> <!-- when_getPostByUserIdIsCalledWithValidUserId_expect_HTTPStatusCode200 -->
+                  <span class="method-name">when_getPostByUserIdIsCalledWithValidUserId_expect_HTTPStatusCode200</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getPostByUserIdIsCalledWithValidUserId_expect_HeaderContentTypeToBeApplicationJson">
+                  </a> <!-- when_getPostByUserIdIsCalledWithValidUserId_expect_HeaderContentTypeToBeApplicationJson -->
+                  <span class="method-name">when_getPostByUserIdIsCalledWithValidUserId_expect_HeaderContentTypeToBeApplicationJson</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="when_getPostByUserIdIsCalledWithValidUserId_expect_OnlySpecifiedUserPostsAreReturned">
+                  </a> <!-- when_getPostByUserIdIsCalledWithValidUserId_expect_OnlySpecifiedUserPostsAreReturned -->
+                  <span class="method-name">when_getPostByUserIdIsCalledWithValidUserId_expect_OnlySpecifiedUserPostsAreReturned</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-UserBlog_Test_Suite-class-passed -->
+        </div> <!-- panel UserBlog_Test_Suite -->
+        <div panel-name="test-xml-UserBlog_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\MARTINS\Desktop\UserBlogTesting\UserBlogTesting-Suite-Runner.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;UserBlog Test Suite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;utilities.ExtentReporterNG&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;UserBlogTesting Tests&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;requests.SearchUserTest&quot;/&gt;
+      &lt;class name=&quot;requests.FetchUserPostsTest&quot;/&gt;
+      &lt;class name=&quot;requests.FetchUserPostCommentsTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- UserBlogTesting Tests --&gt;
+&lt;/suite&gt; &lt;!-- UserBlog Test Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-UserBlog_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for UserBlog Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">UserBlogTesting Tests (3 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-UserBlog_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for UserBlog Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-UserBlog_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for UserBlog Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_UserBlog_Test_Suite');
+function tableData_UserBlog_Test_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(18);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'when_getCommentsIsCalled_expect_ResultCanBeFilteredByUser')
+data.setCell(0, 2, 'requests.FetchUserPostCommentsTest')
+data.setCell(0, 3, 13204);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'when_getUserIsCalledWithNonExistingUserId_expect_NoResult')
+data.setCell(1, 2, 'requests.SearchUserTest')
+data.setCell(1, 3, 4389);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'when_getUsersIsCalled_expect_HTTPStatusCode200')
+data.setCell(2, 2, 'requests.SearchUserTest')
+data.setCell(2, 3, 1323);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'when_getPostByUserIdIsCalledWithInvalidUserId_expect_EmptyResult')
+data.setCell(3, 2, 'requests.FetchUserPostsTest')
+data.setCell(3, 3, 1307);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'when_getPostByUserIdIsCalledWithValidUserId_expect_ArrayIsNotEmpty')
+data.setCell(4, 2, 'requests.FetchUserPostsTest')
+data.setCell(4, 3, 1229);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'when_getCommentsIsCalled_expect_ArrayIsNotEmpty')
+data.setCell(5, 2, 'requests.FetchUserPostCommentsTest')
+data.setCell(5, 3, 1148);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'when_getUserIsCalledWithUserId3_expect_IdIs3')
+data.setCell(6, 2, 'requests.SearchUserTest')
+data.setCell(6, 3, 1143);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'when_getPostByUserIdIsCalledWithValidUserId_expect_OnlySpecifiedUserPostsAreReturned')
+data.setCell(7, 2, 'requests.FetchUserPostsTest')
+data.setCell(7, 3, 1102);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'when_getUsersIsCalled_expect_ArrayIsNotEmpty')
+data.setCell(8, 2, 'requests.SearchUserTest')
+data.setCell(8, 3, 1097);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'when_getCommentsIsCalled_expect_HeaderContentTypeToBeApplicationJson')
+data.setCell(9, 2, 'requests.FetchUserPostCommentsTest')
+data.setCell(9, 3, 1086);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'when_getUsersIsCalled_expect_SamanthaToBeOnUserList')
+data.setCell(10, 2, 'requests.SearchUserTest')
+data.setCell(10, 3, 1082);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'when_getUserIsCalledWithUserId3_expect_HTTPStatusCode200')
+data.setCell(11, 2, 'requests.SearchUserTest')
+data.setCell(11, 3, 1052);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'when_getCommentsIsCalled_expect_HTTPStatusCode200')
+data.setCell(12, 2, 'requests.FetchUserPostCommentsTest')
+data.setCell(12, 3, 1041);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'when_getPostByUserIdIsCalledWithValidUserId_expect_HTTPStatusCode200')
+data.setCell(13, 2, 'requests.FetchUserPostsTest')
+data.setCell(13, 3, 1024);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'when_getPostByUserIdIsCalledWithValidUserId_expect_HeaderContentTypeToBeApplicationJson')
+data.setCell(14, 2, 'requests.FetchUserPostsTest')
+data.setCell(14, 3, 932);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'when_getUsersIsCalled_expect_HeaderContentTypeToBeApplicationJson')
+data.setCell(15, 2, 'requests.SearchUserTest')
+data.setCell(15, 3, 929);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'when_getCommentIsCalledWithPostId_expect_OnlyCommentsRelatedToSpecifiedPost')
+data.setCell(16, 2, 'requests.FetchUserPostCommentsTest')
+data.setCell(16, 3, 921);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'when_getUserIsCalledWithUserId3_expect_UsernameSamantha')
+data.setCell(17, 2, 'requests.SearchUserTest')
+data.setCell(17, 3, 822);
+window.suiteTableData['UserBlog_Test_Suite']= { tableData: data, tableDiv: 'times-div-UserBlog_Test_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <div id="times-div-UserBlog_Test_Suite">
+              </div> <!-- times-div-UserBlog_Test_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-UserBlog_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for UserBlog Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-UserBlog_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-UserBlog_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">requests.FetchUserPostCommentsTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setBaseURI</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">requests.FetchUserPostsTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setBaseURI</span>
+                <span class="method-start">491 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">requests.SearchUserTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setBaseURI</span>
+                <span class="method-start">492 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">when_getUserIsCalledWithNonExistingUserId_expect_NoResult</span>
+                <span class="method-start">512 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getUserIsCalledWithUserId3_expect_HTTPStatusCode200</span>
+                <span class="method-start">4902 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getUserIsCalledWithUserId3_expect_IdIs3</span>
+                <span class="method-start">5954 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getUserIsCalledWithUserId3_expect_UsernameSamantha</span>
+                <span class="method-start">7097 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getUsersIsCalled_expect_ArrayIsNotEmpty</span>
+                <span class="method-start">7919 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getUsersIsCalled_expect_HTTPStatusCode200</span>
+                <span class="method-start">9016 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getUsersIsCalled_expect_HeaderContentTypeToBeApplicationJson</span>
+                <span class="method-start">10339 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getUsersIsCalled_expect_SamanthaToBeOnUserList</span>
+                <span class="method-start">11269 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">requests.FetchUserPostsTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">when_getPostByUserIdIsCalledWithInvalidUserId_expect_EmptyResult</span>
+                <span class="method-start">12353 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getPostByUserIdIsCalledWithValidUserId_expect_ArrayIsNotEmpty</span>
+                <span class="method-start">13661 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getPostByUserIdIsCalledWithValidUserId_expect_HTTPStatusCode200</span>
+                <span class="method-start">14891 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getPostByUserIdIsCalledWithValidUserId_expect_HeaderContentTypeToBeApplicationJson</span>
+                <span class="method-start">15917 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getPostByUserIdIsCalledWithValidUserId_expect_OnlySpecifiedUserPostsAreReturned</span>
+                <span class="method-start">16849 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">requests.FetchUserPostCommentsTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">when_getCommentIsCalledWithPostId_expect_OnlyCommentsRelatedToSpecifiedPost</span>
+                <span class="method-start">17953 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getCommentsIsCalled_expect_ArrayIsNotEmpty</span>
+                <span class="method-start">18875 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getCommentsIsCalled_expect_HTTPStatusCode200</span>
+                <span class="method-start">20023 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getCommentsIsCalled_expect_HeaderContentTypeToBeApplicationJson</span>
+                <span class="method-start">21064 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">when_getCommentsIsCalled_expect_ResultCanBeFilteredByUser</span>
+                <span class="method-start">22150 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

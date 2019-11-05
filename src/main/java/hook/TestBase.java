@@ -22,6 +22,7 @@ public class TestBase {
 
     public void initializeBaseURI() throws IOException {
 
+        //Reading the object from location
         //Read file from location within project and get the defined HOST
         environment = new Properties();
         FileInputStream environmentFile = new FileInputStream(System.getProperty("user.dir")
@@ -32,6 +33,4 @@ public class TestBase {
         RestAssured.baseURI = environment.getProperty("HOST");
 
     }
-
-
 }
